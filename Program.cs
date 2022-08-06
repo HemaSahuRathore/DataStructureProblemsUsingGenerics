@@ -16,7 +16,8 @@
                 Console.WriteLine("4.Insert 30 between 56 and 70 Final Sequence: 56->30->70");
                 Console.WriteLine("5.Delete First element");
                 Console.WriteLine("6.Ability to delete last element");
-                Console.Write("7.Exit  ");
+                Console.WriteLine("7.Ability to search LinkedList to find Node with value 30");
+                Console.Write("8.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -74,9 +75,17 @@
                         linkedListObj6.Display();
                         Console.WriteLine();
                         break;
+                    case 7:
+                        LinkedList<int> linkedListObj7 = new LinkedList<int>();
+                        linkedListObj7.Append(56);
+                        linkedListObj7.Append(30);
+                        linkedListObj7.Append(70);
+                        linkedListObj7.Display();
+                        linkedListObj7.SearchElement(75);
+                        break;
                 }
             
-            } while (option != 7);
+            } while (option != 8);
 
 
         }

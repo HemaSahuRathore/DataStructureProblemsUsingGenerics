@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedListUsingGenerics
 {
-    internal class LinkedList<T>
+    internal class LinkedList<T> where T : IComparable
     {
         public Node<T> head;
         int size;
@@ -144,6 +144,36 @@ namespace LinkedListUsingGenerics
                 Console.WriteLine("Last node element {0} is deleted ", lastDeleteNode);
                 size--;
             }
+        }
+
+        //search element
+        public void SearchElement(T searchElement)
+        {
+            int node = 1; //created node to display node position
+            int elementfound = 0;
+            if (head.data == null)
+            {
+                Console.WriteLine("Linked list is empty!!");
+                return;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (temp != null)
+                {
+                    if (temp.data.CompareTo(searchElement) == 0)
+                    {
+                        Console.WriteLine("Element {0} found at Node {1}", searchElement, node);
+                        elementfound = 1;
+                        return;
+                    }
+                    temp = temp.next;
+                    node++;
+                }
+                if (elementfound == 0)
+                    Console.WriteLine("Element {0} is not present in the Linked List", searchElement);
+            }
+
         }
 
     }
