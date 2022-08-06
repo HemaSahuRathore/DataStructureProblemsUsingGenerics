@@ -9,11 +9,13 @@ namespace LinkedListUsingGenerics
     internal class LinkedList<T>
     {
         public Node<T> head;
+        int size;
 
         //add element to last
         public void AddLast(T data)
         {   
             Node<T> newNode = new Node<T>(data);
+            size++;
             
             if(head == null)
             {
@@ -59,6 +61,7 @@ namespace LinkedListUsingGenerics
         public void AddFirst(T data)
         {
             Node<T> newNode = new Node<T>(data);
+            size++;
 
             newNode.next = head; 
             head = newNode; 
@@ -69,6 +72,38 @@ namespace LinkedListUsingGenerics
         public void Append(T data)
         {
             AddLast(data); //functionality is same as AddLast so calling the AddFirst method here
+        }
+
+        //insert in between or at position
+        public void InsertElementInBetweenOrAtPosition(int position, T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+
+            if (position < 1 || position > size + 1)
+            {
+                Console.WriteLine("Invalid Position");
+                return;
+            }
+
+            if (position == 1)
+            {
+                newNode.next = this.head;
+                head = newNode;
+                size++;
+            }
+            else
+            {
+                Node<T> temp = head;
+                for (int i = 1; i < position - 1; i++)
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+                size++;
+
+            }
+            Console.WriteLine("{0} is inserted at position {1}", data, position);
         }
 
     }
