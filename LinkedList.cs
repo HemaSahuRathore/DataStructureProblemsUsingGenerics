@@ -207,5 +207,70 @@ namespace LinkedListUsingGenerics
             Console.WriteLine("Element {0} is not present in the Linked List", element);
         }
 
+        //Search for Node element and Delete
+        public void SearchElementNDelete(T searchElement)
+        {
+            int node = 1;
+            
+            if (head == null)
+            {
+                Console.WriteLine("Linked list is empty!!");
+                return;
+            }
+                
+            else if (head.data.CompareTo(searchElement) == 0) //if element is found at head position
+            {
+                head = head.next;
+                Console.WriteLine("Element {0} found at Node {1}", searchElement, node);
+                Console.WriteLine("Element {0} deleted", searchElement);
+                return;
+            }
+
+            Node<T> currentNode = head;
+            Node<T> previousNode = head;
+            while (currentNode != null)
+            {
+                if (currentNode.data.CompareTo(searchElement) == 0)
+                {
+                    Console.WriteLine("Element {0} found at Node {1}", searchElement, node);
+
+                    for (int i = 1; i < node - 1; i++)
+                    {
+                        previousNode = previousNode.next;
+                    }
+                    previousNode.next = currentNode.next;
+                    Console.WriteLine("Element {0} deleted", searchElement);
+                    currentNode.next = null;
+                    return;
+                }
+                currentNode = currentNode.next;
+                node++;
+            }
+            Console.WriteLine("Element {0} is not present in the Linked List", searchElement);
+        }
+
+        //size
+        public void Size()
+        {
+            int sizeOfLL = 1;
+
+            Node<T> temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is empty!!");
+                return; //control returned to main method from where it came
+            }
+            else
+            {
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                    sizeOfLL++;
+                }
+                Console.WriteLine("Size of the Linked List is " + sizeOfLL);
+            }
+
+        }
+
     }
 }
