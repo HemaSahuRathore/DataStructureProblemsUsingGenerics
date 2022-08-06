@@ -15,9 +15,10 @@
                 Console.WriteLine("3.Create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
                 Console.WriteLine("4.Insert 30 between 56 and 70 Final Sequence: 56->30->70");
                 Console.WriteLine("5.Delete First element");
-                Console.WriteLine("6.Ability to delete last element");
-                Console.WriteLine("7.Ability to search LinkedList to find Node with value 30");
-                Console.Write("8.Exit  ");
+                Console.WriteLine("6.Delete last element");
+                Console.WriteLine("7.Search LinkedList to find Node with value 30");
+                Console.WriteLine("8.Insert 40 after 30 to the Linked List sequence of 56->30->70");
+                Console.Write("9.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -83,9 +84,19 @@
                         linkedListObj7.Display();
                         linkedListObj7.SearchElement(75);
                         break;
+                    case 8:
+                        LinkedList<int> linkedListObj8 = new LinkedList<int>();
+                        linkedListObj8.Append(56);
+                        linkedListObj8.Append(30);
+                        linkedListObj8.Append(70);
+                        linkedListObj8.Display();
+                        linkedListObj8.InsertDataAfterELement(40, 30);// Data:40, ELement:30
+                        linkedListObj8.Display();
+                        Console.WriteLine();
+                        break;
                 }
             
-            } while (option != 8);
+            } while (option != 9);
 
 
         }

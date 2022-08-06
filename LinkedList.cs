@@ -176,5 +176,36 @@ namespace LinkedListUsingGenerics
 
         }
 
+        //insert after element
+        public void InsertDataAfterELement(T data, T element)
+        {
+            Node<T> newElement = new Node<T>(data);
+
+            if (head == null) 
+            {
+                Console.WriteLine("Linked list is empty!!");
+                return;
+            }
+            else
+            {
+                Node<T> temp = head;
+                while (temp != null)
+                {
+                    if (temp.data.CompareTo(element) == 0)
+                    {
+                        Node<T> tempAdd = temp.next; //storing temp address to add it to newElement.next
+
+                        temp.next = newElement;
+                        newElement.next = tempAdd;
+                        Console.WriteLine("{0} is inserted after {1}", data, element);
+                        size++;
+                        return;
+                    }
+                    temp = temp.next;
+                }
+             }
+            Console.WriteLine("Element {0} is not present in the Linked List", element);
+        }
+
     }
 }
