@@ -12,7 +12,8 @@
                 Console.WriteLine("\nPlease select the Options from Below Use case to execute: ");
                 Console.WriteLine("1.Create a simple Linked List of 56, 30 and 70");
                 Console.WriteLine("2.Create Linked List by adding 30 and 56 to 70, LinkedList Sequence: 56->30->70");
-                Console.Write("3.Exit  ");
+                Console.WriteLine("3.Create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
+                Console.Write("4.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
