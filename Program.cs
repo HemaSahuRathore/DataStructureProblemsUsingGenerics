@@ -19,7 +19,8 @@
                 Console.WriteLine("7.Search LinkedList to find Node with value 30");
                 Console.WriteLine("8.Insert 40 after 30 to the Linked List sequence of 56->30->70");
                 Console.WriteLine("9.Delete 40 from the Linked List sequence of 56->30->40->70 and show the size of LinkedList is 3");
-                Console.Write("10.Exit  ");
+                Console.WriteLine("10.Ability to create Ordered Linked List");
+                Console.Write("11.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -108,9 +109,18 @@
                         linkedListObj9.Size();
                         Console.WriteLine();
                         break;
+                    case 10:
+                        SortedLinkedList<int> sortedLinkedList = new SortedLinkedList<int>();
+                        sortedLinkedList.Add(56);
+                        sortedLinkedList.Add(30);
+                        sortedLinkedList.Add(40);
+                        sortedLinkedList.Add(70);
+                        sortedLinkedList.Display();
+                        Console.WriteLine();
+                        break;
                 }
             
-            } while (option != 10);
+            } while (option != 11);
 
 
         }
