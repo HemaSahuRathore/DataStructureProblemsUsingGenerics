@@ -52,8 +52,18 @@ namespace LinkedListUsingGenerics
                 }
                 Console.WriteLine(currentNode.data);
             }
-                
-            
+                    
         }
+
+        //add element at first place
+        public void AddFirst(T data)
+        {
+            Node<T> newNode = new Node<T>(data);
+
+            newNode.next = head; 
+            head = newNode; 
+            Console.WriteLine("{0} is added as a first element", data);
+        }
+
     }
 }

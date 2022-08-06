@@ -9,9 +9,10 @@
 
             do
             {
-                Console.WriteLine("\nPlease select the Options from Below: ");
+                Console.WriteLine("\nPlease select the Options from Below Use case to execute: ");
                 Console.WriteLine("1.Create a simple Linked List of 56, 30 and 70");
-                Console.Write("2.Exit  ");
+                Console.WriteLine("2.Create Linked List by adding 30 and 56 to 70, LinkedList Sequence: 56->30->70");
+                Console.Write("3.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -23,6 +24,13 @@
                         linkedListObj.AddLast(70);
                         linkedListObj.Display();
                         Console.WriteLine();
+                        break;
+                    case 2:
+                        LinkedList<int> linkedListObj2 = new LinkedList<int>();
+                        linkedListObj2.AddFirst(70);
+                        linkedListObj2.AddFirst(30);
+                        linkedListObj2.AddFirst(56);
+                        linkedListObj2.Display();
                         break;
                 }
             } while (option != 2);
