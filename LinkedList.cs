@@ -65,5 +65,11 @@ namespace LinkedListUsingGenerics
             Console.WriteLine("{0} is added as a first element", data);
         }
 
+        //append element
+        public void Append(T data)
+        {
+            AddLast(data); //functionality is same as AddLast so calling the AddFirst method here
+        }
+
     }
 }

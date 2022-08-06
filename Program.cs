@@ -32,8 +32,16 @@
                         linkedListObj2.AddFirst(56);
                         linkedListObj2.Display();
                         break;
+                    case 3:
+                        LinkedList<int> linkedListObj3 = new LinkedList<int>();
+                        linkedListObj3.Append(56);
+                        linkedListObj3.Append(30);
+                        linkedListObj3.Append(70);
+                        linkedListObj3.Display();
+                        Console.WriteLine();
+                        break;
                 }
-            } while (option != 2);
+            } while (option != 4);
 
 
         }
