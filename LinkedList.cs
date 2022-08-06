@@ -106,5 +106,19 @@ namespace LinkedListUsingGenerics
             Console.WriteLine("{0} is inserted at position {1}", data, position);
         }
 
+        //delete first element
+        public void DeleteFirst()
+        {
+            if (head == null)
+                Console.WriteLine("LinkedList is Empty!!");
+            else
+            {
+                T elementRemoved = head.data;
+                head = head.next;
+                size--;
+                Console.WriteLine("First node element {0} is deleted from the Linked List", elementRemoved);
+            }
+        }
+
     }
 }

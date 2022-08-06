@@ -13,8 +13,9 @@
                 Console.WriteLine("1.Create a simple Linked List of 56, 30 and 70");
                 Console.WriteLine("2.Create Linked List by adding 30 and 56 to 70, LinkedList Sequence: 56->30->70");
                 Console.WriteLine("3.Create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
-                Console.WriteLine("4.Ability to insert 30 between 56 and 70 Final Sequence: 56->30->70");
-                Console.Write("5.Exit  ");
+                Console.WriteLine("4.Insert 30 between 56 and 70 Final Sequence: 56->30->70");
+                Console.WriteLine("5.Delete First element");
+                Console.Write("6.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -52,9 +53,19 @@
                         linkedListObj4.Display();
                         Console.WriteLine();
                         break;
+                    case 5:
+                        LinkedList<int> linkedListObj5 = new LinkedList<int>();
+                        linkedListObj5.Append(56);
+                        linkedListObj5.Append(30);
+                        linkedListObj5.Append(70);
+                        linkedListObj5.Display();
+                        linkedListObj5.DeleteFirst();
+                        linkedListObj5.Display();
+                        Console.WriteLine();
+                        break;
                 }
             
-            } while (option != 5);
+            } while (option != 6);
 
 
         }
