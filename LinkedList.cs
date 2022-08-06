@@ -120,5 +120,31 @@ namespace LinkedListUsingGenerics
             }
         }
 
+        //delete last element      
+        public void DeleteLast()
+        {
+            Node<T> temp = head;
+            if (temp == null)
+                Console.WriteLine("LinkedList is Empty!!");
+            if (temp.next == null)
+            {
+                T data = temp.data;
+                temp = null;
+                Console.WriteLine("Node element {0} is deleted ", data);
+                size--;
+            }
+            else
+            {
+                while (temp.next.next != null) //searching for second last element
+                { 
+                    temp = temp.next;
+                }
+                T lastDeleteNode = temp.next.data;
+                temp.next = null;
+                Console.WriteLine("Last node element {0} is deleted ", lastDeleteNode);
+                size--;
+            }
+        }
+
     }
 }

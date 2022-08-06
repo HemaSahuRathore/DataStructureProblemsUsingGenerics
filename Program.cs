@@ -15,7 +15,8 @@
                 Console.WriteLine("3.Create Linked List by appending 30 and 70 to 56, LinkedList Sequence: 56->30->70");
                 Console.WriteLine("4.Insert 30 between 56 and 70 Final Sequence: 56->30->70");
                 Console.WriteLine("5.Delete First element");
-                Console.Write("6.Exit  ");
+                Console.WriteLine("6.Ability to delete last element");
+                Console.Write("7.Exit  ");
                 option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -63,9 +64,19 @@
                         linkedListObj5.Display();
                         Console.WriteLine();
                         break;
+                    case 6:
+                        LinkedList<int> linkedListObj6 = new LinkedList<int>();
+                        linkedListObj6.Append(56);
+                        linkedListObj6.Append(30);
+                        linkedListObj6.Append(70);
+                        linkedListObj6.Display();
+                        linkedListObj6.DeleteLast();
+                        linkedListObj6.Display();
+                        Console.WriteLine();
+                        break;
                 }
             
-            } while (option != 6);
+            } while (option != 7);
 
 
         }
